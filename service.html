@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Njmt Alqrayn Technical Services</title>
+
+    <!-- Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Configuration for Custom Colors -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              "brand-blue": "#008bd2", // Cyan Blue for buttons/accents
+              "brand-navy": "#0f4c75", // Deep Navy for headers
+              "brand-gray": "#f3f4f6", // Light gray background
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Custom Utilities */
+      .image-blob {
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px -10px rgba(15, 76, 117, 0.2);
+      }
+
+      /* Smooth fade-in animation for sections */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        will-change: opacity, transform;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* Banner Background overlay gradient */
+      .banner-overlay {
+        background: linear-gradient(
+          to right,
+          rgba(15, 76, 117, 0.9),
+          rgba(15, 76, 117, 0.7)
+        );
+      }
+
+      /* Hover Zoom Effect for Images */
+      .zoom-hover {
+        transition: transform 0.5s ease;
+      }
+      .zoom-parent:hover .zoom-hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white text-gray-600 antialiased selection:bg-brand-blue selection:text-white"
+  >
+    <!-- Header (Sticky, Home Icon Only) -->
+    <header
+      class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50 h-16 flex items-center justify-between px-6 md:px-12 transition-all duration-300"
+    >
+      <a
+        href="./index.html"
+        class="text-brand-navy hover:text-brand-blue transition-colors duration-300 p-2 rounded-full hover:bg-brand-gray/50"
+        aria-label="Home"
+      >
+        <i data-lucide="home" class="w-6 h-6"></i>
+      </a>
+      <!-- Optional: Small Company Name in Header for Mobile Brand Recognition -->
+      <span class="text-brand-navy font-semibold text-sm md:hidden"
+        >Njmt Alqrayn</span
+      >
+    </header>
+
+    <!-- Spacer for fixed header -->
+    <div class="h-16"></div>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="space-y-0">
+      <!-- SECTION 1: AC Services -->
+      <section id="ac-services" class="fade-in-section group">
+        <!-- Banner Title -->
+        <div class="relative h-64 md:h-80 w-full overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop"
+            alt="AC Background"
+            class="absolute inset-0 w-full h-full object-cover animate-pulse-slow"
+          />
+          <div
+            class="absolute inset-0 banner-overlay flex items-center justify-center"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold text-white tracking-wide drop-shadow-lg text-center px-4"
+            >
+              AC Services
+            </h1>
+          </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="container mx-auto px-6 py-16 md:py-24 max-w-7xl">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          >
+            <!-- Left: Image Composition (Collage Style) -->
+            <div class="relative h-[500px] w-full hidden md:block zoom-parent">
+              <!-- Decorative Border/Backdrop -->
+              <div
+                class="absolute top-10 right-10 bottom-10 left-20 border-2 border-brand-blue rounded-[40px] z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"
+              ></div>
+
+              <!-- Main Large Image -->
+              <div
+                class="absolute top-0 right-0 w-2/3 h-[400px] image-blob z-10 overflow-hidden"
+              >
+                <img
+                  src="https://www.hurleyanddavid.com/wp-content/uploads/2022/05/hurley-david-ac-technician-min-1.jpg"
+                  alt="Technician working"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+
+              <!-- Small Float Image 1 -->
+              <div
+                class="absolute bottom-0 left-10 w-1/2 h-[220px] image-blob z-20 border-4 border-white overflow-hidden animate-float"
+              >
+                <img
+                  src="https://colthomeservices.com/wp-content/uploads/2022/11/Wall-Mounted-AC-Unit.jpg"
+                  alt="AC Unit"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+
+              <!-- Icon Badge -->
+              <div
+                class="absolute top-12 left-12 bg-brand-blue text-white p-4 rounded-2xl shadow-lg z-30 transform transition-transform hover:scale-110"
+              >
+                <i data-lucide="snowflake" class="w-8 h-8"></i>
+              </div>
+            </div>
+
+            <!-- Mobile Image (Simple) -->
+            <div class="md:hidden rounded-2xl overflow-hidden shadow-lg mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1581094794329-cd119277ac36?q=80&w=800"
+                alt="AC Service"
+                class="w-full h-64 object-cover"
+              />
+            </div>
+
+            <!-- Right: Text Content -->
+            <div class="space-y-6">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-brand-navy leading-tight"
+              >
+                The Best AC Maintenance Company In The Region
+              </h2>
+              <p class="text-gray-600 leading-relaxed">
+                With extreme temperatures, finding reliable air conditioning
+                repair is crucial. **Njmt Alqrayn Technical Services** offers
+                top-tier AC services handled by highly skilled technicians
+                trained to manage all types of AC units. From routine
+                maintenance to complex repairs, our experts ensure your system
+                operates efficiently and effectively.
+              </p>
+
+              <div class="pt-2">
+                <a
+                  href="#contact-info"
+                  class="inline-block bg-brand-blue text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-brand-navy hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  Call Now
+                </a>
+              </div>
+
+              <div class="pt-6 border-t border-gray-100 mt-6">
+                <h3
+                  class="text-xl font-bold text-brand-navy mb-3 flex items-center gap-2"
+                >
+                  <i data-lucide="settings" class="w-5 h-5 text-brand-blue"></i>
+                  AC Repair Procedure
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  Maintenance is just the first step. To ensure you have the
+                  best heating and cooling system, we focus on comprehensive
+                  diagnostics. Understanding how every component works together
+                  allows us to troubleshoot effectively, extending the lifespan
+                  of your unit and lowering energy costs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: Plumbing Services (Gray Background) -->
+      <section
+        id="plumbing-services"
+        class="bg-brand-gray/30 fade-in-section group"
+      >
+        <div class="relative h-64 md:h-80 w-full overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?q=80&w=2000&auto=format&fit=crop"
+            alt="Plumbing Background"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 banner-overlay flex items-center justify-center"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold text-white tracking-wide text-center px-4"
+            >
+              Plumbing Services
+            </h1>
+          </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-16 md:py-24 max-w-7xl">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          >
+            <!-- Image Area -->
+            <div class="relative h-[500px] w-full hidden md:block zoom-parent">
+              <div
+                class="absolute top-10 right-10 bottom-10 left-20 border-2 border-brand-blue rounded-[40px] z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"
+              ></div>
+              <div
+                class="absolute top-0 right-0 w-2/3 h-[400px] image-blob z-10 overflow-hidden"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=800&auto=format&fit=crop"
+                  alt="Plumber fixing sink"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-10 w-1/2 h-[220px] image-blob z-20 border-4 border-white overflow-hidden animate-float"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=600&auto=format&fit=crop"
+                  alt="Pipes"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute top-12 left-12 bg-brand-blue text-white p-4 rounded-2xl shadow-lg z-30 transform transition-transform hover:scale-110"
+              >
+                <i data-lucide="droplet" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <div class="md:hidden rounded-2xl overflow-hidden shadow-lg mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=800"
+                alt="Plumbing"
+                class="w-full h-64 object-cover"
+              />
+            </div>
+
+            <!-- Text Area -->
+            <div class="space-y-6">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-brand-navy leading-tight"
+              >
+                Expert Plumbing Solutions & Leak Detection
+              </h2>
+              <p class="text-gray-600 leading-relaxed">
+                From minor leaks to major pipe installations, our certified
+                plumbers handle it all with precision. We understand the
+                inconvenience of plumbing issues, which is why we offer rapid
+                response times and durable solutions to keep your water systems
+                running smoothly.
+              </p>
+              <div class="pt-2">
+                <a
+                  href="#contact-info"
+                  class="inline-block bg-brand-blue text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-brand-navy hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  Call Now
+                </a>
+              </div>
+              <div class="pt-6 border-t border-gray-200 mt-6">
+                <h3
+                  class="text-xl font-bold text-brand-navy mb-3 flex items-center gap-2"
+                >
+                  <i data-lucide="wrench" class="w-5 h-5 text-brand-blue"></i>
+                  Comprehensive Sanitary Services
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  We specialize in water heater installation, drain cleaning,
+                  and fixture replacement. Our team uses non-invasive methods to
+                  detect leaks, saving your property from unnecessary damage
+                  while ensuring a completely watertight finish.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Electrical Work -->
+      <section id="electrical-services" class="fade-in-section group">
+        <div class="relative h-64 md:h-80 w-full overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1621905252507-b35a5f90978d?q=80&w=2000&auto=format&fit=crop"
+            alt="Electrical Background"
+            class="absolute inset-0 w-full h-full object-cover grayscale opacity-50"
+          />
+          <div
+            class="absolute inset-0 bg-brand-navy/80 flex items-center justify-center"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold text-white tracking-wide text-center px-4"
+            >
+              Electrical Work
+            </h1>
+          </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-16 md:py-24 max-w-7xl">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          >
+            <!-- Image Area -->
+            <div class="relative h-[500px] w-full hidden md:block zoom-parent">
+              <div
+                class="absolute top-10 right-10 bottom-10 left-20 border-2 border-brand-blue rounded-[40px] z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"
+              ></div>
+              <div
+                class="absolute top-0 right-0 w-2/3 h-[400px] image-blob z-10 overflow-hidden"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=800&auto=format&fit=crop"
+                  alt="Electrician"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-10 w-1/2 h-[220px] image-blob z-20 border-4 border-white overflow-hidden animate-float"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=600&auto=format&fit=crop"
+                  alt="Wires"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute top-12 left-12 bg-brand-blue text-white p-4 rounded-2xl shadow-lg z-30 transform transition-transform hover:scale-110"
+              >
+                <i data-lucide="zap" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <div class="md:hidden rounded-2xl overflow-hidden shadow-lg mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=800"
+                alt="Electrical"
+                class="w-full h-64 object-cover"
+              />
+            </div>
+
+            <!-- Text Area -->
+            <div class="space-y-6">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-brand-navy leading-tight"
+              >
+                Certified Electrical Installations & Repair
+              </h2>
+              <p class="text-gray-600 leading-relaxed">
+                Safety is our top priority. Our licensed electricians provide
+                comprehensive electrical services for residential and commercial
+                properties. Whether you need complete rewiring, circuit breaker
+                upgrades, or smart lighting installation, we ensure everything
+                is up to code.
+              </p>
+              <div class="pt-2">
+                <a
+                  href="#contact-info"
+                  class="inline-block bg-brand-blue text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-brand-navy hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  Call Now
+                </a>
+              </div>
+              <div class="pt-6 border-t border-gray-100 mt-6">
+                <h3
+                  class="text-xl font-bold text-brand-navy mb-3 flex items-center gap-2"
+                >
+                  <i data-lucide="activity" class="w-5 h-5 text-brand-blue"></i>
+                  Load Balancing & Maintenance
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  Avoid power outages and electrical hazards with our
+                  preventative maintenance packages. We inspect your
+                  distribution boards, check for load imbalances, and fix faulty
+                  wiring before it becomes a dangerous problem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Handyman Services -->
+      <section
+        id="handyman-services"
+        class="bg-brand-gray/30 fade-in-section group"
+      >
+        <div class="relative h-64 md:h-80 w-full overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?q=80&w=2000&auto=format&fit=crop"
+            alt="Handyman Background"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 banner-overlay flex items-center justify-center"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold text-white tracking-wide text-center px-4"
+            >
+              Handyman Services
+            </h1>
+          </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-16 md:py-24 max-w-7xl">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          >
+            <!-- Image Area -->
+            <div class="relative h-[500px] w-full hidden md:block zoom-parent">
+              <div
+                class="absolute top-10 right-10 bottom-10 left-20 border-2 border-brand-blue rounded-[40px] z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"
+              ></div>
+              <div
+                class="absolute top-0 right-0 w-2/3 h-[400px] image-blob z-10 overflow-hidden"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?q=80&w=800&auto=format&fit=crop"
+                  alt="Handyman tools"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-10 w-1/2 h-[220px] image-blob z-20 border-4 border-white overflow-hidden animate-float"
+              >
+                <img
+                  src="https://images.squarespace-cdn.com/content/v1/611b3a86fb6a226aadffcf79/1699943779857-WABF397IMIPDHLDQHEW7/Can+A+Handyman+Do+Plumbing.png"
+                  alt="Fixing"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute top-12 left-12 bg-brand-blue text-white p-4 rounded-2xl shadow-lg z-30 transform transition-transform hover:scale-110"
+              >
+                <i data-lucide="hammer" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <div class="md:hidden rounded-2xl overflow-hidden shadow-lg mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?q=80&w=800"
+                alt="Handyman"
+                class="w-full h-64 object-cover"
+              />
+            </div>
+
+            <!-- Text Area -->
+            <div class="space-y-6">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-brand-navy leading-tight"
+              >
+                Reliable Multi-Skilled Handyman Services
+              </h2>
+              <p class="text-gray-600 leading-relaxed">
+                Need a quick fix? Our professional handymen are ready to tackle
+                that growing to-do list. From mounting TVs and assembling
+                furniture to fixing door hinges and installing shelves, no job
+                is too small for our dedicated team.
+              </p>
+              <div class="pt-2">
+                <a
+                  href="#contact-info"
+                  class="inline-block bg-brand-blue text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-brand-navy hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  Call Now
+                </a>
+              </div>
+              <div class="pt-6 border-t border-gray-200 mt-6">
+                <h3
+                  class="text-xl font-bold text-brand-navy mb-3 flex items-center gap-2"
+                >
+                  <i
+                    data-lucide="check-circle"
+                    class="w-5 h-5 text-brand-blue"
+                  ></i>
+                  Versatile & Efficient
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  We pride ourselves on efficiency and cleanliness. Our handymen
+                  arrive fully equipped with the right tools to get the job done
+                  right the first time, respecting your space and leaving it
+                  spotless after the work is complete.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: Carpentry Services -->
+      <section id="carpentry-services" class="fade-in-section group">
+        <div class="relative h-64 md:h-80 w-full overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1610515152285-a77498c368d9?q=80&w=2000&auto=format&fit=crop"
+            alt="Carpentry Background"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 banner-overlay flex items-center justify-center"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold text-white tracking-wide text-center px-4"
+            >
+              Carpentry Services
+            </h1>
+          </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-16 md:py-24 max-w-7xl">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          >
+            <!-- Image Area -->
+            <div class="relative h-[500px] w-full hidden md:block zoom-parent">
+              <div
+                class="absolute top-10 right-10 bottom-10 left-20 border-2 border-brand-blue rounded-[40px] z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"
+              ></div>
+              <div
+                class="absolute top-0 right-0 w-2/3 h-[400px] image-blob z-10 overflow-hidden"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop"
+                  alt="Carpenter"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-10 w-1/2 h-[220px] image-blob z-20 border-4 border-white overflow-hidden animate-float"
+              >
+                <img
+                  src="https://live-thecrucible-org.s3.amazonaws.com/uploads/2022/01/Woodworking_2022_08632.jpg"
+                  alt="Woodwork"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute top-12 left-12 bg-brand-blue text-white p-4 rounded-2xl shadow-lg z-30 transform transition-transform hover:scale-110"
+              >
+                <i data-lucide="ruler" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <div class="md:hidden rounded-2xl overflow-hidden shadow-lg mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800"
+                alt="Carpentry"
+                class="w-full h-64 object-cover"
+              />
+            </div>
+
+            <!-- Text Area -->
+            <div class="space-y-6">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-brand-navy leading-tight"
+              >
+                Custom Joinery & Woodwork
+              </h2>
+              <p class="text-gray-600 leading-relaxed">
+                Enhance your home with bespoke carpentry solutions. Our master
+                carpenters specialize in designing and building custom
+                wardrobes, kitchen cabinets, and shelving units tailored to fit
+                your space perfectly.
+              </p>
+              <div class="pt-2">
+                <a
+                  href="#contact-info"
+                  class="inline-block bg-brand-blue text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-brand-navy hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  Call Now
+                </a>
+              </div>
+              <div class="pt-6 border-t border-gray-100 mt-6">
+                <h3
+                  class="text-xl font-bold text-brand-navy mb-3 flex items-center gap-2"
+                >
+                  <i data-lucide="pen-tool" class="w-5 h-5 text-brand-blue"></i>
+                  Repair & Restoration
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  We also offer extensive repair services for damaged doors,
+                  creaky floorboards, and broken furniture. We combine
+                  traditional craftsmanship with modern tools to restore the
+                  beauty and functionality of your wooden assets.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: Painting Services -->
+      <section
+        id="painting-services"
+        class="bg-brand-gray/30 fade-in-section group"
+      >
+        <div class="relative h-64 md:h-80 w-full overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2000&auto=format&fit=crop"
+            alt="Painting Background"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 banner-overlay flex items-center justify-center"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold text-white tracking-wide text-center px-4"
+            >
+              Painting Services
+            </h1>
+          </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-16 md:py-24 max-w-7xl">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          >
+            <!-- Image Area -->
+            <div class="relative h-[500px] w-full hidden md:block zoom-parent">
+              <div
+                class="absolute top-10 right-10 bottom-10 left-20 border-2 border-brand-blue rounded-[40px] z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"
+              ></div>
+              <div
+                class="absolute top-0 right-0 w-2/3 h-[400px] image-blob z-10 overflow-hidden"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/House_painters_in_Capri_%28cropped%29.jpg/250px-House_painters_in_Capri_%28cropped%29.jpg"
+                  alt="Painter"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-10 w-1/2 h-[220px] image-blob z-20 border-4 border-white overflow-hidden animate-float"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=600&auto=format&fit=crop"
+                  alt="Paint Buckets"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute top-12 left-12 bg-brand-blue text-white p-4 rounded-2xl shadow-lg z-30 transform transition-transform hover:scale-110"
+              >
+                <i data-lucide="paint-bucket" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <div class="md:hidden rounded-2xl overflow-hidden shadow-lg mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1562259949-e8e6003a6408?q=80&w=800"
+                alt="Painting"
+                class="w-full h-64 object-cover"
+              />
+            </div>
+
+            <!-- Text Area -->
+            <div class="space-y-6">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-brand-navy leading-tight"
+              >
+                Interior & Exterior Painting Professionals
+              </h2>
+              <p class="text-gray-600 leading-relaxed">
+                Transform your space with a fresh coat of paint. Our
+                professional painters deliver flawless finishes for walls,
+                ceilings, and exteriors. We use premium, low-VOC paints to
+                ensure vibrant colors that last, without the harsh chemical
+                smells.
+              </p>
+              <div class="pt-2">
+                <a
+                  href="#contact-info"
+                  class="inline-block bg-brand-blue text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-brand-navy hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  Call Now
+                </a>
+              </div>
+              <div class="pt-6 border-t border-gray-200 mt-6">
+                <h3
+                  class="text-xl font-bold text-brand-navy mb-3 flex items-center gap-2"
+                >
+                  <i data-lucide="layers" class="w-5 h-5 text-brand-blue"></i>
+                  Surface Prep & Protection
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  A great paint job starts with preparation. We handle all
+                  sanding, filling, and priming, covering your furniture and
+                  floors meticulously. We leave you with nothing but beautifully
+                  painted walls and a clean environment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: IT & Security -->
+      <section id="it-security" class="fade-in-section group">
+        <div class="relative h-64 md:h-80 w-full overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop"
+            alt="Security Background"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 banner-overlay flex items-center justify-center"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-bold text-white tracking-wide text-center px-4"
+            >
+              IT & Security Installation
+            </h1>
+          </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-16 md:py-24 max-w-7xl">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          >
+            <!-- Image Area -->
+            <div class="relative h-[500px] w-full hidden md:block zoom-parent">
+              <div
+                class="absolute top-10 right-10 bottom-10 left-20 border-2 border-brand-blue rounded-[40px] z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"
+              ></div>
+              <div
+                class="absolute top-0 right-0 w-2/3 h-[400px] image-blob z-10 overflow-hidden"
+              >
+                <img
+                  src="https://images.stockcake.com/public/f/a/d/fad31bcc-ec4b-4dd1-b118-aa62ec9b5f18_large/server-room-chaos-stockcake.jpg"
+                  alt="Server Room"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-10 w-1/2 h-[220px] image-blob z-20 border-4 border-white overflow-hidden animate-float"
+              >
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdE_1Ey6BHNusZ_LdvEt1b0nI2shyK7Yn6MA&s"
+                  alt="CCTV Camera"
+                  class="w-full h-full object-cover zoom-hover"
+                />
+              </div>
+              <div
+                class="absolute top-12 left-12 bg-brand-blue text-white p-4 rounded-2xl shadow-lg z-30 transform transition-transform hover:scale-110"
+              >
+                <i data-lucide="shield-check" class="w-8 h-8"></i>
+              </div>
+            </div>
+            <div class="md:hidden rounded-2xl overflow-hidden shadow-lg mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1558494949-ef2a0152883f?q=80&w=800"
+                alt="IT Security"
+                class="w-full h-64 object-cover"
+              />
+            </div>
+
+            <!-- Text Area -->
+            <div class="space-y-6">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-brand-navy leading-tight"
+              >
+                Advanced IT Network & CCTV Access Control
+              </h2>
+              <p class="text-gray-600 leading-relaxed">
+                Protect your assets with cutting-edge technology. We specialize
+                in the installation and maintenance of robust IT networks, CCTV
+                surveillance systems, and biometric access controls. Our
+                solutions are designed to provide maximum security and seamless
+                connectivity for businesses and homes.
+              </p>
+              <div class="pt-2">
+                <a
+                  href="#contact-info"
+                  class="inline-block bg-brand-blue text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-brand-navy hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  Call Now
+                </a>
+              </div>
+              <div class="pt-6 border-t border-gray-100 mt-6">
+                <h3
+                  class="text-xl font-bold text-brand-navy mb-3 flex items-center gap-2"
+                >
+                  <i data-lucide="wifi" class="w-5 h-5 text-brand-blue"></i>
+                  Integrated Security Ecosystems
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  We don't just install cameras; we build integrated security
+                  ecosystems. From remote monitoring configurations to
+                  structured cabling for high-speed data transfer, our IT
+                  technicians ensure your infrastructure is secure, scalable,
+                  and reliable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: CONTACT INFO & COMPANY NAME -->
+      <section
+        id="contact-info"
+        class="bg-brand-navy text-white py-16 md:py-24 fade-in-section"
+      >
+        <div class="container mx-auto px-6 max-w-7xl">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 tracking-wide">
+              Njmt Alqrayn Technical Services
+            </h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+              Your trusted partner for all technical, maintenance, and security
+              needs in the region.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center"
+          >
+            <!-- Address -->
+            <div
+              class="bg-white/10 backdrop-blur-md p-8 rounded-3xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 group"
+            >
+              <div
+                class="bg-brand-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform"
+              >
+                <i data-lucide="map-pin" class="w-8 h-8 text-white"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Visit Us</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Al Guises building 89, City Tower<br />
+                Office 102<br />
+                Al Qusais Industrial 1<br />
+                Damascus Street
+              </p>
+            </div>
+
+            <!-- Landline -->
+            <div
+              class="bg-white/10 backdrop-blur-md p-8 rounded-3xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 group"
+            >
+              <!-- Icon -->
+              <div
+                class="bg-brand-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform"
+              >
+                <i data-lucide="phone" class="w-8 h-8 text-white"></i>
+              </div>
+
+              <!-- Landline Section -->
+              <h3 class="text-xl font-bold mb-1">Landline</h3>
+              <p class="text-gray-300 text-lg mb-4">04 258 4856</p>
+
+              <!-- Mobile Section -->
+              <h3 class="text-xl font-bold mb-1">Mobile Support</h3>
+              <p class="text-gray-300 text-lg">058 149 7090</p>
+
+              <!-- Availability -->
+              <p class="text-gray-400 text-sm mt-4">Sun - Thu, 09:00 - 18:00</p>
+            </div>
+
+            <!-- Email -->
+            <div
+              class="bg-white/10 backdrop-blur-md p-8 rounded-3xl hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 group"
+            >
+              <!-- Icon -->
+              <div
+                class="bg-brand-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform"
+              >
+                <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold mb-3">Email Support</h3>
+
+              <!-- Email -->
+              <p class="text-gray-300 text-lg">info@njmtalqrayn.com</p>
+
+              <!-- Sub text -->
+              <p class="text-gray-400 text-sm mt-2">
+                Available 24/7 for Assistance
+              </p>
+            </div>
+          </div>
+
+          <!-- Copyright / Bottom Bar -->
+          <div
+            class="border-t border-white/10 mt-16 pt-8 text-center text-gray-400 text-sm"
+          >
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Njmt Alqrayn Technical Services. All rights reserved.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- No Footer as requested (Integrated into the contact section above) -->
+
+    <!-- Floating Home Button (Appears on Scroll) -->
+    <a
+      href="./index.html"
+      id="home-btn"
+      class="fixed bottom-6 right-6 bg-brand-blue text-white p-4 rounded-full shadow-2xl z-50 transition-all duration-500 transform translate-y-20 opacity-0 hover:bg-brand-navy hover:scale-110 flex items-center justify-center border-2 border-white/20"
+      aria-label="Go to Top"
+    >
+      <i data-lucide="home" class="w-6 h-6"></i>
+    </a>
+
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Intersection Observer for Fade-in Animation
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.15,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in-section").forEach((section) => {
+        observer.observe(section);
+      });
+
+      // Floating Home Button
+      const homeBtn = document.getElementById("home-btn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          homeBtn.classList.remove("translate-y-20", "opacity-0");
+          homeBtn.classList.add("translate-y-0", "opacity-100");
+        } else {
+          homeBtn.classList.add("translate-y-20", "opacity-0");
+          homeBtn.classList.remove("translate-y-0", "opacity-100");
+        }
+      });
+
+      // Redirect to index.html when clicked
+      homeBtn.addEventListener("click", () => {
+        window.location.href = "./index.html";
+      });
+    </script>
+  </body>
+</html>
