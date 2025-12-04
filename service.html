@@ -175,7 +175,7 @@
             <!-- Mobile Image (Simple) -->
             <div class="md:hidden rounded-2xl overflow-hidden shadow-lg mb-6">
               <img
-                src="https://images.unsplash.com/photo-1581094794329-cd119277ac36?q=80&w=800"
+                src="https://aonecoolingsolution.in/wp-content/uploads/2025/02/split-ac-service-Sfastservices.jpg"
                 alt="AC Service"
                 class="w-full h-64 object-cover"
               />
@@ -334,7 +334,7 @@
       <section id="electrical-services" class="fade-in-section group">
         <div class="relative h-64 md:h-80 w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1621905252507-b35a5f90978d?q=80&w=2000&auto=format&fit=crop"
+            src="https://insights.workwave.com/wp-content/uploads/2024/02/male-electrician-worker-checking-repair-maintenance-operation-electric-system-in-factory-male.jpg_s1024x1024wisk20cCnGcP61pmP25J75h0RELP_ceU07OlFDXeliHZyFhNjA.jpg"
             alt="Electrical Background"
             class="absolute inset-0 w-full h-full object-cover grayscale opacity-50"
           />
@@ -541,7 +541,7 @@
       <section id="carpentry-services" class="fade-in-section group">
         <div class="relative h-64 md:h-80 w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1610515152285-a77498c368d9?q=80&w=2000&auto=format&fit=crop"
+            src="https://www.bizinsure.com/wp-content/uploads/2022/05/types-of-carpentry-role-scaled.jpg"
             alt="Carpentry Background"
             class="absolute inset-0 w-full h-full object-cover"
           />
@@ -694,7 +694,7 @@
             </div>
             <div class="md:hidden rounded-2xl overflow-hidden shadow-lg mb-6">
               <img
-                src="https://images.unsplash.com/photo-1562259949-e8e6003a6408?q=80&w=800"
+                src="https://lh6.googleusercontent.com/sMFL6MuvrETiMrhUIDdh3QTeUFGx6TTE107jGAg4l_vKfOD84Am_IL_3PMfuH8KjtED1K6e_gVpZ4GDU-RbzIB7_juQBZKDyv-LgwJQRLOV0KmMlAdP7jmngz0nfpegj43sKDT_xL_PbIEuSGUdOLgmHS3bjNbvwIqzkBC-ZoAXrS3GWjqoCHx5GOQ"
                 alt="Painting"
                 class="w-full h-64 object-cover"
               />
@@ -795,7 +795,7 @@
             </div>
             <div class="md:hidden rounded-2xl overflow-hidden shadow-lg mb-6">
               <img
-                src="https://images.unsplash.com/photo-1558494949-ef2a0152883f?q=80&w=800"
+                src="https://onlinedegrees.sandiego.edu/wp-content/uploads/2022/01/USD-Cyber-How-to-Become-a-Cybersecurity-Specialist-Career-Salary-Guide_cover.jpg"
                 alt="IT Security"
                 class="w-full h-64 object-cover"
               />
@@ -994,6 +994,68 @@
       homeBtn.addEventListener("click", () => {
         window.location.href = "./index.html";
       });
+
+      // ===============================
+      // 1. Disable Right Click
+      // ===============================
+      document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      // ===============================
+      // 2. Disable Keyboard Shortcuts
+      // ===============================
+      document.onkeydown = function (e) {
+        // F12
+        if (e.key === "F12") {
+          return false;
+        }
+
+        // Ctrl + Shift + I
+        if (e.ctrlKey && e.shiftKey && e.key === "I") {
+          return false;
+        }
+
+        // Ctrl + Shift + J
+        if (e.ctrlKey && e.shiftKey && e.key === "J") {
+          return false;
+        }
+
+        // Ctrl + Shift + C
+        if (e.ctrlKey && e.shiftKey && e.key === "C") {
+          return false;
+        }
+
+        // Ctrl + U (View Source)
+        if (e.ctrlKey && e.key === "u") {
+          return false;
+        }
+      };
+
+      // ===============================
+      // 3. Detect Developer Tools Open
+      // If DevTools opens → Redirect or Alert
+      // ===============================
+      (function () {
+        const element = new Image();
+        Object.defineProperty(element, "id", {
+          get: function () {
+            // Action when DevTools opens:
+            window.location.href = "https://google.com";
+          },
+        });
+        console.log(element);
+      })();
+
+      // ===============================
+      // 4. Disable Text Selection
+      // ===============================
+      document.addEventListener("selectstart", (e) => e.preventDefault());
+
+      // ===============================
+      // 5. Disable Copy, Cut, Paste
+      // ===============================
+      document.addEventListener("copy", (e) => e.preventDefault());
+      document.addEventListener("cut", (e) => e.preventDefault());
+      document.addEventListener("paste", (e) => e.preventDefault());
     </script>
   </body>
 </html>

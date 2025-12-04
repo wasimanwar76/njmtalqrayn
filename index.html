@@ -1262,6 +1262,68 @@
       revealElements.forEach((el) => {
         observer.observe(el);
       });
+
+      // ===============================
+      // 1. Disable Right Click
+      // ===============================
+      document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      // ===============================
+      // 2. Disable Keyboard Shortcuts
+      // ===============================
+      document.onkeydown = function (e) {
+        // F12
+        if (e.key === "F12") {
+          return false;
+        }
+
+        // Ctrl + Shift + I
+        if (e.ctrlKey && e.shiftKey && e.key === "I") {
+          return false;
+        }
+
+        // Ctrl + Shift + J
+        if (e.ctrlKey && e.shiftKey && e.key === "J") {
+          return false;
+        }
+
+        // Ctrl + Shift + C
+        if (e.ctrlKey && e.shiftKey && e.key === "C") {
+          return false;
+        }
+
+        // Ctrl + U (View Source)
+        if (e.ctrlKey && e.key === "u") {
+          return false;
+        }
+      };
+
+      // ===============================
+      // 3. Detect Developer Tools Open
+      // If DevTools opens → Redirect or Alert
+      // ===============================
+      (function () {
+        const element = new Image();
+        Object.defineProperty(element, "id", {
+          get: function () {
+            // Action when DevTools opens:
+            window.location.href = "https://google.com";
+          },
+        });
+        console.log(element);
+      })();
+
+      // ===============================
+      // 4. Disable Text Selection
+      // ===============================
+      document.addEventListener("selectstart", (e) => e.preventDefault());
+
+      // ===============================
+      // 5. Disable Copy, Cut, Paste
+      // ===============================
+      document.addEventListener("copy", (e) => e.preventDefault());
+      document.addEventListener("cut", (e) => e.preventDefault());
+      document.addEventListener("paste", (e) => e.preventDefault());
     </script>
   </body>
 </html>
