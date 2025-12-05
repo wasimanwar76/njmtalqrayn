@@ -1112,34 +1112,63 @@
           <div
             class="lg:w-2/3 bg-white text-gray-800 p-6 md:p-8 rounded-2xl shadow-xl reveal delay-100"
           >
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form
+              id="contactForm"
+              class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
+            >
+              <!-- Full Name -->
               <div class="col-span-1">
-                <label class="block text-sm font-semibold text-gray-600 mb-1"
-                  >Full Name</label
-                >
+                <label class="block text-sm font-semibold text-gray-600 mb-1">
+                  Full Name
+                </label>
                 <input
                   type="text"
+                  id="name"
+                  name="name"
                   placeholder="John Doe"
                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#008bd2] focus:ring-2 focus:ring-[#008bd2]/20 outline-none transition-all"
                 />
               </div>
+
+              <!-- Email Address (✅ NEW FIELD ADDED) -->
               <div class="col-span-1">
-                <label class="block text-sm font-semibold text-gray-600 mb-1"
-                  >Phone Number</label
-                >
+                <label class="block text-sm font-semibold text-gray-600 mb-1">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="john@example.com"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#008bd2] focus:ring-2 focus:ring-[#008bd2]/20 outline-none transition-all"
+                />
+              </div>
+
+              <!-- Phone Number -->
+              <div class="col-span-1">
+                <label class="block text-sm font-semibold text-gray-600 mb-1">
+                  Phone Number
+                </label>
                 <input
                   type="tel"
+                  id="phone"
+                  name="phone"
                   placeholder="+971 50 123 4567"
                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#008bd2] focus:ring-2 focus:ring-[#008bd2]/20 outline-none transition-all"
                 />
               </div>
+
+              <!-- Service Needed -->
               <div class="col-span-1">
-                <label class="block text-sm font-semibold text-gray-600 mb-1"
-                  >Service Needed</label
-                >
+                <label class="block text-sm font-semibold text-gray-600 mb-1">
+                  Service Needed
+                </label>
                 <select
+                  id="service"
+                  name="service"
                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#008bd2] focus:ring-2 focus:ring-[#008bd2]/20 outline-none transition-all bg-white"
                 >
+                  <option value="">Select Service</option>
                   <option>AC Repair & Maintenance</option>
                   <option>Plumbing</option>
                   <option>Electrical</option>
@@ -1147,32 +1176,72 @@
                   <option>Other</option>
                 </select>
               </div>
-              <div class="col-span-1">
-                <label class="block text-sm font-semibold text-gray-600 mb-1"
-                  >Location</label
-                >
+
+              <!-- Location -->
+              <div class="col-span-1 md:col-span-2">
+                <label class="block text-sm font-semibold text-gray-600 mb-1">
+                  Location
+                </label>
                 <input
                   type="text"
+                  id="location"
+                  name="location"
                   placeholder="e.g. Downtown Dubai"
                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#008bd2] focus:ring-2 focus:ring-[#008bd2]/20 outline-none transition-all"
                 />
               </div>
+
+              <!-- Message -->
               <div class="col-span-1 md:col-span-2">
-                <label class="block text-sm font-semibold text-gray-600 mb-1"
-                  >Message</label
-                >
+                <label class="block text-sm font-semibold text-gray-600 mb-1">
+                  Message
+                </label>
                 <textarea
+                  id="message"
+                  name="message"
                   rows="4"
                   placeholder="Describe your issue..."
-                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#008bd2] focus:ring-2 focus:ring-[#008bd2]/20 outline-none transition-all"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#008bd2] focus:ring-2 focus:ring-[#008bd2]/20 outline-none transition-all resize-none"
                 ></textarea>
               </div>
+
+              <!-- Status Message -->
+              <div
+                id="formStatus"
+                class="col-span-1 md:col-span-2 text-center text-sm font-semibold"
+              ></div>
+
+              <!-- Submit Button -->
               <div class="col-span-1 md:col-span-2">
                 <button
+                  id="submitBtn"
                   type="submit"
-                  class="w-full bg-[#008bd2] hover:bg-[#0077b5] text-white font-bold py-4 rounded-lg shadow-lg transition-all transform hover:-translate-y-1 active:scale-95"
+                  class="w-full bg-[#008bd2] hover:bg-[#0077b5] text-white font-bold py-4 rounded-lg shadow-lg transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3"
                 >
-                  Send Message
+                  <span id="btnText">Send Message</span>
+
+                  <!-- ✅ Loader Spinner (Hidden By Default) -->
+                  <svg
+                    id="btnLoader"
+                    class="hidden w-5 h-5 animate-spin text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      class="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    ></circle>
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </form>
@@ -1324,6 +1393,94 @@
       document.addEventListener("copy", (e) => e.preventDefault());
       document.addEventListener("cut", (e) => e.preventDefault());
       document.addEventListener("paste", (e) => e.preventDefault());
+
+      const form = document.getElementById("contactForm");
+      const statusBox = document.getElementById("formStatus");
+      const submitBtn = document.getElementById("submitBtn");
+      const btnText = document.getElementById("btnText");
+      const btnLoader = document.getElementById("btnLoader");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        statusBox.textContent = "";
+        statusBox.className =
+          "col-span-1 md:col-span-2 text-center text-sm font-semibold";
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const service = document.getElementById("service").value;
+        const location = document.getElementById("location").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        // ✅ Validation
+        if (!name || !email || !phone || !service || !location || !message) {
+          statusBox.textContent = "⚠️ Please fill in all required fields.";
+          statusBox.classList.add("text-red-600");
+          return;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          statusBox.textContent = "⚠️ Please enter a valid email address.";
+          statusBox.classList.add("text-red-600");
+          return;
+        }
+
+        if (phone.length < 8) {
+          statusBox.textContent = "⚠️ Please enter a valid phone number.";
+          statusBox.classList.add("text-red-600");
+          return;
+        }
+
+        // ✅ Show Loader
+        submitBtn.disabled = true;
+        btnText.textContent = "Sending...";
+        btnLoader.classList.remove("hidden");
+
+        const formData = {
+          name,
+          email,
+          phone,
+          service,
+          location,
+          message,
+          receiverEmail: "info@njmtalqrayn.com",
+        };
+
+        try {
+          const res = await fetch("https://njmtalqrayn-mailserver.vercel.app/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          });
+
+          const result = await res.json();
+
+          if (res.ok && result.success) {
+            statusBox.textContent =
+              "✅ Your message has been sent successfully.";
+            statusBox.classList.remove("text-red-600");
+            statusBox.classList.add("text-green-600");
+            form.reset();
+          } else {
+            statusBox.textContent =
+              result.message || "❌ Something went wrong.";
+            statusBox.classList.add("text-red-600");
+          }
+        } catch (error) {
+          statusBox.textContent = "❌ Network error. Please try again.";
+          statusBox.classList.add("text-red-600");
+        } finally {
+          // ✅ Hide Loader
+          submitBtn.disabled = false;
+          btnText.textContent = "Send Message";
+          btnLoader.classList.add("hidden");
+        }
+      });
     </script>
   </body>
 </html>
